@@ -3,10 +3,6 @@
 Testing is focused only on the "Live Exam" feature of the Brritto App. It includes validating exam status, order, and visibility on the listing screen, verifying metadata (like title, marks, and timer) on the details page, and ensuring correct behavior and data consistency after clicking an exam.
 
 
-##Use : Maintain POM model using OOP concept for maintainability
-
-
-
 ##Project Run process
 
 Need to install and configured JAVA and gradle
