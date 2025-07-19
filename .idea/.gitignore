@@ -1,0 +1,39 @@
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# IntelliJ project-specific files
+/shelf/
+/workspace.xml
+/mavenHomeManager.xml
+/modules.xml
+/tasks.xml
+/usage.statistics.xml
+/compiler.xml
+/encodings.xml
+
+# Logs
+*.log
+
+# Build directories
+/out/
+/target/
+
+# Maven local repository cache (if used wrongly)
+**/dependency-reduced-pom.xml
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Java class files
+*.class
+
+# Environment files
+.env
+*.env
+
+# VS Code (if anyone uses it too)
+.vscode/

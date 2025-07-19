@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation("org.testng:testng:7.11.0")
+
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation("org.seleniumhq.selenium:selenium-java:4.32.0")
+    // https://mvnrepository.com/artifact/io.appium/java-client
+    implementation("io.appium:java-client:9.4.0")
+    // https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
+    implementation("com.googlecode.json-simple:json-simple:1.1.1")
+    // https://mvnrepository.com/artifact/io.qameta.allure.gradle.report/allure-report-plugin
+    testImplementation 'io.qameta.allure:allure-testng:2.27.0'
+    // https://mvnrepository.com/artifact/com.github.javafaker/javafaker
+    implementation("com.github.javafaker:javafaker:1.0.2")
+}
+
+test {
+    useTestNG()
+            {
+
+
+                if(project.hasProperty("suiteName"))
+
+                {
+                    systemProperties.put("suiteName",project.property("suiteName"))
+                }
+                suites "./src/test/resources/" + systemProperties.get("suiteName")
+            }
+}
