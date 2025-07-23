@@ -36,10 +36,10 @@ public class setup {
         return driver;
     }
 
-    }
+
    @AfterTest
    public void quit_()
    {
        driver.quit();
    }
-
+    }
