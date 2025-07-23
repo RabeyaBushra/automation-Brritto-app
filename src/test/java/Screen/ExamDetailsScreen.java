@@ -88,7 +88,6 @@ public class ExamDetailsScreen {
         HashMap<String, Integer> examDeatilsInfo = new HashMap<>();
         String Mandatorymarks;
         String Mandatory_checked = Mandatory_subject_marks.getAttribute("checkable");
-        String Optional_checked = optional_subject_marks.getAttribute("checkable");
             if (("false".equalsIgnoreCase(Mandatory_checked))) {
                 System.out.println("Already selected");
                 Assert.assertTrue(true, "Mandatory Subject is already selected");
@@ -102,7 +101,12 @@ public class ExamDetailsScreen {
                 int Mandatorymark = Integer.parseInt(String.valueOf(Mandatorymarks));
                 examDeatilsInfo.put("Mandatorymarks", Mandatorymark);
                 System.out.println(" Actual Mandatory Marks :" + Mandatorymark);
-                if (("true".equalsIgnoreCase(Optional_checked))) {
+                 try {
+                   WebElement optional_subject_marks = driver.findElement(
+                            By.xpath("//android.widget.CheckBox[contains(@content-desc, 'marks')]")
+                    );
+
+                if ("true".equalsIgnoreCase(optional_subject_marks.getAttribute("checkable"))) {
                     optional_subject_marks.click();
                     String fullDesc1 = optional_subject_marks.getAttribute("content-desc");
                     String number2 = "";
@@ -118,6 +122,9 @@ public class ExamDetailsScreen {
                 } else {
                     System.out.println("Optional subject Not Found");
 
+                }
+                     } catch (NoSuchElementException e) {
+                    System.out.println("✅ Optional subject checkbox not found. Skipping optional marks calculation.");
                 }
 
             }
