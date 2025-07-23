@@ -10,7 +10,7 @@ Testing is focused only on the "Live Exam" feature of the Brritto App. It includ
 
 2.Clone the project
 
-3.Click the dropdown on the right side of the current file, then go to Edit Configurations.
+3.Click on the 'Current File' dropdown located beside the Run button at the top, then go to Edit Configurations.
 
 4.Add new configuration
 
