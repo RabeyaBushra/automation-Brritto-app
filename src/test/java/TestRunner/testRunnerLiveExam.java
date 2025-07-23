@@ -143,10 +143,10 @@ public class testRunnerLiveExam extends setup {
         String actualStatus = getExpectedStatusFromJson(expectedTitle);
         if (expectedStatus == actualStatus) {
             Assert.assertEquals(actualStatus, expectedStatus,
-                    "Status match for exam: " + expectedTitle);}
+                    "Status match for exam: " + expectedTitle);
         System.out.println("Status match for exam ----------- "+expectedTitle);
         System.out.println("Expected :" + expectedStatus);
-        System.out.println("Actual :  " + actualStatus);}
+        System.out.println("Actual :  " + actualStatus);}}
 
     @Test(priority = 11, description = "Check Exam Visibility ", enabled = true)
     public void ExamVisibleCheck() throws IOException, ParseException, InterruptedException {
@@ -155,7 +155,10 @@ public class testRunnerLiveExam extends setup {
         String ActuaL_Txt =Ongoinallinfo.get("title");
         Ongoing_dateTime = Ongoinallinfo.get("dateTime");
         Ongoing_Status=Ongoinallinfo.get("status");
-
+          if(ActuaL_Txt.equals("null"))
+        {
+            System.out.println("Not found the exam");
+        }
         if (ActuaL_Txt.contains("You have already taken the exam")) {
             System.out.println("Landed on Already Attempted Popup");
             Assert.assertEquals(ActuaL_Txt, "You have already taken the exam, and you can only attend it once.");
