@@ -186,7 +186,7 @@ public class ongoingScreen {
                         exam.click();
                     } else {
                         System.out.println(title + "' is not Running (status: " + status + ")");
-                        //exam.click();
+                        exam.click();
                     }
                     examInfo.put("title", title);
                     examInfo.put("dateTime", dateTime);
