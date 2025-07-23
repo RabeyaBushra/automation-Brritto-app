@@ -5,17 +5,18 @@ Testing is focused only on the "Live Exam" feature of the Brritto App. It includ
 
 ##Project Run process
 
-Need to install and configured JAVA and gradle
-Clone the project
-Click the dropdown on the right side of the current file, then go to Edit Configurations.
-Add new configuration
-click TestNG
-Set the Name
-Select the class "testRunnerLiveExam ......"
-Select Use classpath of module "QAAutomation_Brritto_App.test"
-Click Apply
-Click OK
-Now Go to the "Run" button Click it
+
+1.Need to install and configured JAVA and gradle
+2.Clone the project
+3.Click the dropdown on the right side of the current file, then go to Edit Configurations.
+4.Add new configuration
+5.click TestNG
+6.Set the Name
+7.Select the class "testRunnerLiveExam ......"
+8.Select Use classpath of module "QAAutomation_Brritto_App.test"
+9.Click Apply
+10.Click OK
+11.Now Go to the "Run" button Click it
 
 
 
