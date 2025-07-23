@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import org.openqa.selenium.By;
 
 import static Utils.utils.getExpectedStatusFromJson;
 
