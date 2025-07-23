@@ -49,8 +49,8 @@ public class RegistrationScreen {
     public WebElement your_class;
     @AndroidFindBy(accessibility ="aaaa dummy 3")
     public WebElement select_text;
-    @FindBy(xpath ="//android.widget.Button[@content-desc=\"Class 9\"]")
-    public WebElement class_9;
+    @FindBy(xpath ="//android.widget.Button[@content-desc=\"Class Test 4.0\"]")
+    public WebElement class_select;
     @FindBy(xpath ="//android.widget.Button[@content-desc=\"Sign up\"]")
     public WebElement sign_up;
 
@@ -71,14 +71,18 @@ public class RegistrationScreen {
         Thread.sleep(2000);
         RegistrationOTP.sendKeys(otp);
         ContinueOtp_btn.click();
+        Thread.sleep(2000);
         Txt_field.get(0).click();
         Faker faker = new Faker();
         String name = faker.name().fullName();
+        Thread.sleep(2000);
         Txt_field.get(0).sendKeys(name);
         districtSelector.click();
         Thread.sleep(1000);
         Bandarban_option.click();
+        Thread.sleep(2000);
         Gender.click();
+        Thread.sleep(2000);
         Txt_field.get(1).click();
         String email = "user" +"@test.com";
         Txt_field.get(1).sendKeys(email);
@@ -97,7 +101,7 @@ public class RegistrationScreen {
         select_text.click();
         Thread.sleep(7000);
         your_class.click();
-        class_9.click();
+        class_select.click();
         sign_up.click();
         System.out.println("SuccessFully Registered-------------------");
 
