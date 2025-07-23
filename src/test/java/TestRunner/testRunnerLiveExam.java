@@ -159,21 +159,23 @@ public class testRunnerLiveExam extends setup {
         Ongoing_dateTime = Ongoinallinfo.get("dateTime");
         Ongoing_Status=Ongoinallinfo.get("status");
       
-        if (ActuaL_Txt != null && ActuaL_Txt.contains("You have already taken the exam")) {
-            System.out.println("Landed on Already Attempted Popup");
-            Assert.assertEquals(ActuaL_Txt, "You have already taken the exam, and you can only attend it once.");
-            ongoingScreen.Attempted_popup_cross_btn.click();}
-        else {
-           if(ActuaL_Txt != null && Ongoing_Status.equals("Exam Running")) {
-                System.out.println("Running");
-                Assert.assertTrue(true, "Running.");
-            }
-            else
-            {
-                System.out.println("Not found");
-            }
-
+       if(Ongoing_Status.equals("Exam Running")) {
+            System.out.println("Running");
+            Assert.assertTrue(true, "Running.");
         }
+        else {
+               if(Ongoing_Status.equals("Exam Attempted")) {
+                   System.out.println("Landed on Already Attempted Popup");
+                   WebElement Attempted_titlelement = driver.findElement(By.xpath("//android.view.View[@content-desc=\"Exam Attempted\"]"));
+                   String Attempted_title = Attempted_titlelement.getAttribute("content-desc");
+                   Assert.assertEquals(Attempted_title, "Exam Attempted");
+                   ongoingScreen.Attempted_popup_cross_btn.click();
+               }
+               else {
+                   System.out.println("not found");
+               }
+        }
+
 
     }
 
