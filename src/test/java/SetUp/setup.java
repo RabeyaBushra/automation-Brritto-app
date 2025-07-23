@@ -37,9 +37,9 @@ public class setup {
     }
 
     }
-//    @AfterTest
-//    public void quit_()
-//    {
-//        driver.quit();
-//    }
+   @AfterTest
+   public void quit_()
+   {
+       driver.quit();
+   }
 
